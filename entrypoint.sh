@@ -40,9 +40,9 @@ git clone --single-branch --branch gh-pages https://github.com/jianliao/spectrum
 
 cd spectrum-css-vr-test-result
 
-git remote -v
+git remote set-url origin https://x-access-token:$GITHUB_TOKEN@github.com/$REPO_FULLNAME.git
 
-# git remote set-url origin https://x-access-token:$GITHUB_TOKEN@github.com/$REPO_FULLNAME.git
+git remote -v
 
 # echo Start fetch
 
