@@ -31,26 +31,30 @@ fi
 echo REPO_FULLNAME: $REPO_FULLNAME
 echo GITHUB_TOKEN: $GITHUB_TOKEN
 
-git init
-
-git remote set-url origin https://x-access-token:$GITHUB_TOKEN@github.com/$REPO_FULLNAME.git
+set -o xtrace
 
 git config --global user.email "actions@github.com"
 git config --global user.name "Gh-pages Merge Action"
 
-set -o xtrace
+git clone --single-branch --branch gh-pages https://github.com/jianliao/spectrum-css-vr-test-result.git
 
-echo Start fetch
+cd spectrum-css-vr-test-result
 
-git fetch origin gh-pages
+git remote -v
 
-echo End fetch
+# git remote set-url origin https://x-access-token:$GITHUB_TOKEN@github.com/$REPO_FULLNAME.git
 
-echo Start checkout
+# echo Start fetch
 
-git checkout -b gh-pages origin/gh-pages
+# git fetch origin gh-pages
 
-echo End checkout
+# echo End fetch
+
+# echo Start checkout
+
+# git checkout -b gh-pages origin/gh-pages
+
+# echo End checkout
 
 echo Start merge
 
