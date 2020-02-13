@@ -31,6 +31,8 @@ fi
 echo REPO_FULLNAME: $REPO_FULLNAME
 echo GITHUB_TOKEN: $GITHUB_TOKEN
 
+git init
+
 git remote set-url origin https://x-access-token:$GITHUB_TOKEN@github.com/$REPO_FULLNAME.git
 
 git config --global user.email "actions@github.com"
