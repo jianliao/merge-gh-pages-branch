@@ -10,27 +10,14 @@ if [[ -z "$GITHUB_TOKEN" ]]; then
 	exit 1
 fi
 
-echo 0
-
-git init
-
 git remote set-url origin https://x-access-token:$GITHUB_TOKEN@github.com/$REPO_FULLNAME.git
 
-echo 1
-
 git config --global user.email "actions@github.com"
+git config --global user.name "Github gh-pages branch Merge Action"
 
-echo 2
-git config --global user.name "Github Gh-pages Merge Action"
+set -o xtrace
 
-git remote -v
-
-# set -o xtrace
-
-echo Fetch ....
 git fetch origin
-
-git checkout -b gh-pages origin/gh-pages
 
 git merge origin/$BRANCH_TO_MERGE --allow-unrelated-histories --no-edit
 
