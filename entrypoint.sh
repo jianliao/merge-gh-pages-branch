@@ -42,30 +42,6 @@ cd spectrum-css-vr-test-result
 
 git remote set-url origin https://x-access-token:$GITHUB_TOKEN@github.com/$REPO_FULLNAME.git
 
-git remote -v
-
-# echo Start fetch
-
-# git fetch origin gh-pages
-
-# echo End fetch
-
-# echo Start checkout
-
-# git checkout -b gh-pages origin/gh-pages
-
-# echo End checkout
-
-echo Start merge
-
 git merge origin/$BRANCH_TO_MERGE --allow-unrelated-histories --no-edit
 
-echo End merge
-
-echo Start push
-
 git push origin gh-pages
-
-echo End push
-
-echo DONE !!!!
