@@ -12,6 +12,8 @@ fi
 
 echo 0
 
+unset GIT_DIR
+
 git remote set-url origin https://x-access-token:$GITHUB_TOKEN@github.com/$REPO_FULLNAME.git
 
 echo 1
