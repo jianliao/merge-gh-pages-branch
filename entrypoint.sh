@@ -12,7 +12,7 @@ fi
 
 echo 0
 
-unset GIT_DIR
+git init
 
 git remote set-url origin https://x-access-token:$GITHUB_TOKEN@github.com/$REPO_FULLNAME.git
 
