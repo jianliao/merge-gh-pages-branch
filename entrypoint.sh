@@ -23,4 +23,4 @@ git merge origin/$BRANCH_TO_MERGE --allow-unrelated-histories --no-edit
 
 git push origin gh-pages
 
-git push origin --delete origin/$BRANCH_TO_MERGE
+git push origin --delete $BRANCH_TO_MERGE
